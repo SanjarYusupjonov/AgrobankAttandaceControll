@@ -58,7 +58,8 @@ public class AttendancePdfService {
 
         PdfWriter   writer = new PdfWriter(out);
         PdfDocument pdf    = new PdfDocument(writer);
-        Document    doc    = new Document(pdf, PageSize.A4.rotate());
+        pdf.setFlushUnusedObjects(false);
+        Document    doc    = new Document(pdf, PageSize.A4.rotate(), false);
         doc.setMargins(28, 28, 28, 28);
 
         PdfFont bold    = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
@@ -98,7 +99,8 @@ public class AttendancePdfService {
 
         PdfWriter   writer = new PdfWriter(out);
         PdfDocument pdf    = new PdfDocument(writer);
-        Document    doc    = new Document(pdf, PageSize.A4);
+        pdf.setFlushUnusedObjects(false);
+        Document    doc    = new Document(pdf, PageSize.A4, false);
         doc.setMargins(28, 28, 28, 28);
 
         PdfFont bold    = PdfFontFactory.createFont(StandardFonts.HELVETICA_BOLD);
